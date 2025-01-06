@@ -6,6 +6,18 @@
 
   .acoes {
     display: flex;
-    flex-direction: column;
+    width: 400px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap:10px;
+
+    button{
+        width: 45%;
+    }
+
+    .button-grande{
+        width: 95%;
+    }
   }
 }
