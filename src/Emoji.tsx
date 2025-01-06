@@ -10,6 +10,25 @@ const EMOJIS = new Map<string, string>([
 //EMOJIS.set("happy", "😁")
 
 export default function Emoji() {
-  let situacao = "crying";
-  return <div className="emoji">{EMOJIS.get(situacao) || "🫠"}</div>;
+  let situacao = "sad";
+
+  function toHappy() {
+    console.log("toHappy");
+    situacao = "happy";
+  }
+
+  function toDead() {
+    console.log("toDead");
+    situacao = "dead";
+  }
+
+  return (
+    <div className="emoji">
+      <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
+      <div className="acoes">
+        <button onClick={toHappy}>Vivo</button>
+        <button onClick={toDead}>Morto</button>
+      </div>
+    </div>
+  );
 }
