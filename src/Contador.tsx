@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import './Contador.css'
 
-function Contador(emoji: String) {
-    const [quant, setQuant] = useState(0);
+interface ContadorProps {
+    emoji: String;
+}
+
+function Contador({emoji}: ContadorProps) {
+    const [quant, setQuant] = useState(5);
 
     function melhorar(){
         const aux = quant;

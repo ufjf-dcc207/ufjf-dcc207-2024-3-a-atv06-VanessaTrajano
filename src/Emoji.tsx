@@ -9,7 +9,6 @@ const EMOJIS = new Map<string, string>([
   ["crying", "😭"],
   ["dead", "😵"],
 ]);
-//EMOJIS.set("happy", "😁")
 
 export default function Emoji() {
   const [situacao, setSituacao] = useState("sad");
