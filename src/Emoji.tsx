@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Emoji.css";
+import Contador from "./Contador";
+
 
 const EMOJIS = new Map<string, string>([
   ["happy", "😁"],
@@ -53,6 +55,7 @@ export default function Emoji() {
           Circular
         </button>
       </div>
+      <Contador emoji = "❤️"/>
     </div>
   );
 }
