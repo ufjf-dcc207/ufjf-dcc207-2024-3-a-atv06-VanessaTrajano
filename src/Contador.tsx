@@ -18,7 +18,7 @@ function Contador({emoji}: ContadorProps) {
     }
 
   return (
-    <div>
+    <div className='contador-container'>
         <span>{emoji.repeat(quant)}</span>
         <span className='cinza'>{emoji.repeat(5 - quant)}</span>
         <button onClick={melhorar}>UP</button>

@@ -2,14 +2,13 @@ import { useState } from "react";
 import "./Emoji.css";
 import Contador from "./Contador";
 
-
 const EMOJIS = new Map<string, string>([
   ["happy", "😁"],
   ["sad", "😞"],
   ["crying", "😭"],
   ["dead", "😵"],
 ]);
-const categorias:Array<string> = ["❤️", "🍗", "💧", "⚡"]
+const categorias: Array<string> = ["❤️", "🍗", "💧", "⚡"];
 
 export default function Emoji() {
   const [situacao, setSituacao] = useState("sad");
@@ -44,20 +43,24 @@ export default function Emoji() {
 
   return (
     <div className="emoji">
-      <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
-      <div className="acoes">
-        <button onClick={toHappy}>Sorrir</button>
-        <button onClick={toSad}>Entristecer</button>
-        <button onClick={toCrying}>Chorar</button>
-        <button onClick={toDead}>Morrer</button>
+      <div className="emoji-div">
+        <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
+        <div className="acoes">
+          <button onClick={toHappy}>Sorrir</button>
+          <button onClick={toSad}>Entristecer</button>
+          <button onClick={toCrying}>Chorar</button>
+          <button onClick={toDead}>Morrer</button>
 
-        <button className="button-grande" onClick={toProximo}>
-          Circular
-        </button>
+          <button className="button-grande" onClick={toProximo}>
+            Circular
+          </button>
+        </div>
       </div>
-      {categorias.map((emoji) =>(
-        <Contador emoji = {emoji}/>
-      ))}
+      <div className="emoji-categorias">
+        {categorias.map((emoji) => (
+          <Contador emoji={emoji} />
+        ))}
+      </div>
     </div>
   );
 }
