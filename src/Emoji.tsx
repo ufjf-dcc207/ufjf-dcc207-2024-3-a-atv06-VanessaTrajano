@@ -9,6 +9,7 @@ const EMOJIS = new Map<string, string>([
   ["crying", "😭"],
   ["dead", "😵"],
 ]);
+const categorias:Array<string> = ["❤️", "🍗", "💧", "⚡"]
 
 export default function Emoji() {
   const [situacao, setSituacao] = useState("sad");
@@ -54,7 +55,9 @@ export default function Emoji() {
           Circular
         </button>
       </div>
-      <Contador emoji = "❤️"/>
+      {categorias.map((emoji) =>(
+        <Contador emoji = {emoji}/>
+      ))}
     </div>
   );
 }
