@@ -17,16 +17,29 @@ export default function Emoji() {
   const [agua, setAgua] = useState(1);
 
   function onAlimentar() {
-    setComida((c) => (c == 5 ? c : c + 1));
+    setComida(Math.min(comida+1,5));
   }
 
   function onHidratar() {
-    setAgua((a) => (a == 5 ? a : a + 1));
+    setAgua(Math.min(agua+1,5));
   }
 
   function onLigarDesligar() {}
 
-  function toProximo() {}
+  function onCiclo() {
+      setComida(Math.max(comida-1,0));
+      setAgua(Math.max(agua-1,0));
+      setEnergia(Math.max(energia-1,0));
+      if(comida==0){
+        setSaude(s => Math.max(s-1,0));
+      }
+      if(agua==0){
+        setSaude(s => Math.max(s-1,0));
+      }
+      if(energia==0){
+        setSaude(s => Math.max(s-1,0));
+      }
+  }
 
   return (
     <div className="emoji">
@@ -41,10 +54,7 @@ export default function Emoji() {
         <button onClick={onAlimentar}>Dar Comida</button>
         <button onClick={onHidratar}>Dar água</button>
         <button onClick={onLigarDesligar}>Liga / Desligar a luz</button>
-
-        <button onClick={toProximo}>
-          Ciclo
-        </button>
+        <button onClick={onCiclo}>Ciclo</button>
       </div>
     </div>
   );
