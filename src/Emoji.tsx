@@ -13,32 +13,19 @@ const categorias: Array<string> = ["❤️", "🍗", "💧", "⚡"];
 export default function Emoji() {
   const [situacao, setSituacao] = useState("sad");
 
-  function toHappy() {
-    setSituacao("happy");
+  function onAlimentar() {
   }
 
   function toDead() {
-    setSituacao("dead");
   }
 
-  function toSad() {
-    setSituacao("sad");
+  function onHidratar() {
   }
 
-  function toCrying() {
-    setSituacao("crying");
+  function onLigarDesligar() {
   }
 
   function toProximo() {
-    if (situacao == "happy") {
-      setSituacao("sad");
-    } else if (situacao == "sad") {
-      setSituacao("crying");
-    } else if (situacao == "crying") {
-      setSituacao("dead");
-    } else {
-      setSituacao("happy");
-    }
   }
 
   return (
@@ -46,13 +33,12 @@ export default function Emoji() {
       <div className="emoji-div">
         <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
         <div className="acoes">
-          <button onClick={toHappy}>Sorrir</button>
-          <button onClick={toSad}>Entristecer</button>
-          <button onClick={toCrying}>Chorar</button>
-          <button onClick={toDead}>Morrer</button>
+          <button onClick={onAlimentar}>Dar Comida</button>
+          <button onClick={onHidratar}>Dar água</button>
+          <button onClick={onLigarDesligar}>Liga / Desligar a luz</button>
 
           <button className="button-grande" onClick={toProximo}>
-            Circular
+            Ciclo
           </button>
         </div>
       </div>
