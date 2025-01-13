@@ -8,3 +8,14 @@
 .cinza{
     filter: grayscale();
 }
+
+.botao-contador{
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+}
+
+.botao-contador:focus,
+.botao-contador:focus-visible {
+  outline: none;
+}
