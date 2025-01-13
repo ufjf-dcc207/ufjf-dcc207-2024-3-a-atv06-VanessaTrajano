@@ -5,21 +5,23 @@ import Contador from "./Contador";
 const EMOJIS = new Map<string, string>([
   ["happy", "😁"],
   ["sad", "😞"],
-  ["crying", "😭"],
   ["dead", "😵"],
 ]);
 const categorias: Array<string> = ["❤️", "🍗", "💧", "⚡"];
 
 export default function Emoji() {
-  const [situacao, setSituacao] = useState("sad");
+  const [situacao, setSituacao] = useState("happy");
+  const [saude, setSaude] = useState(4);
+  const [energia, setEnergia] = useState(3);
+  const [comida, setComida] = useState(2);
+  const [agua, setAgua] = useState(1);
 
   function onAlimentar() {
-  }
-
-  function toDead() {
+    setComida((c) => (c == 5 ? c : c+1))
   }
 
   function onHidratar() {
+    setAgua((a) => (a == 5 ? a : a+1))
   }
 
   function onLigarDesligar() {
@@ -43,10 +45,10 @@ export default function Emoji() {
         </div>
       </div>
       <div className="emoji-categorias">
-        <Contador emoji={"❤️"} valor={3}/>
-        <Contador emoji={"🍗"} valor={3}/>
-        <Contador emoji={"💧"} valor={3}/>
-        <Contador emoji={"⚡"} valor={3}/>
+        <Contador emoji={"❤️"} valor={saude}/>
+        <Contador emoji={"⚡"} valor={energia}/>
+        <Contador emoji={"🍗"} valor={comida}/>
+        <Contador emoji={"💧"} valor={agua}/>
       </div>
     </div>
   );

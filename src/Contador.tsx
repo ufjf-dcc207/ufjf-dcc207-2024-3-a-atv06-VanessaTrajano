@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Contador.css";
 
 interface ContadorProps {
