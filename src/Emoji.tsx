@@ -17,38 +17,34 @@ export default function Emoji() {
   const [agua, setAgua] = useState(1);
 
   function onAlimentar() {
-    setComida((c) => (c == 5 ? c : c+1))
+    setComida((c) => (c == 5 ? c : c + 1));
   }
 
   function onHidratar() {
-    setAgua((a) => (a == 5 ? a : a+1))
+    setAgua((a) => (a == 5 ? a : a + 1));
   }
 
-  function onLigarDesligar() {
-  }
+  function onLigarDesligar() {}
 
-  function toProximo() {
-  }
+  function toProximo() {}
 
   return (
     <div className="emoji">
-      <div className="emoji-div">
-        <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
-        <div className="acoes">
-          <button onClick={onAlimentar}>Dar Comida</button>
-          <button onClick={onHidratar}>Dar água</button>
-          <button onClick={onLigarDesligar}>Liga / Desligar a luz</button>
-
-          <button className="button-grande" onClick={toProximo}>
-            Ciclo
-          </button>
-        </div>
-      </div>
+      <div className="situacao">{EMOJIS.get(situacao) || "🫠"}</div>
       <div className="emoji-categorias">
-        <Contador emoji={"❤️"} valor={saude}/>
-        <Contador emoji={"⚡"} valor={energia}/>
-        <Contador emoji={"🍗"} valor={comida}/>
-        <Contador emoji={"💧"} valor={agua}/>
+        <Contador emoji={"❤️"} valor={saude} />
+        <Contador emoji={"⚡"} valor={energia} />
+        <Contador emoji={"🍗"} valor={comida} />
+        <Contador emoji={"💧"} valor={agua} />
+      </div>
+      <div className="acoes">
+        <button onClick={onAlimentar}>Dar Comida</button>
+        <button onClick={onHidratar}>Dar água</button>
+        <button onClick={onLigarDesligar}>Liga / Desligar a luz</button>
+
+        <button onClick={toProximo}>
+          Ciclo
+        </button>
       </div>
     </div>
   );

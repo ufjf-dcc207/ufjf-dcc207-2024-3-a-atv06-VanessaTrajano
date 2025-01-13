@@ -5,21 +5,13 @@
   justify-content: space-between;
   height: 300px;
 
-  .emoji-div{
-    border-right: 1px solid gray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
   .situacao {
     font-size: 5em;
   }
 
   .acoes {
     display: flex;
+    flex-direction: column;
     width: 400px;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -27,11 +19,7 @@
     row-gap:10px;
 
     button{
-        width: 45%;
-    }
-
-    .button-grande{
-        width: 95%;
+        width: 100%;
     }
   }
 
