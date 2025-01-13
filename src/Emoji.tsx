@@ -43,9 +43,10 @@ export default function Emoji() {
         </div>
       </div>
       <div className="emoji-categorias">
-        {categorias.map((emoji) => (
-          <Contador emoji={emoji} />
-        ))}
+        <Contador emoji={"❤️"} valor={3}/>
+        <Contador emoji={"🍗"} valor={3}/>
+        <Contador emoji={"💧"} valor={3}/>
+        <Contador emoji={"⚡"} valor={3}/>
       </div>
     </div>
   );
